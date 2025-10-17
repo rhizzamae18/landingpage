@@ -14,33 +14,45 @@ const steps = [
   {
     title: "Download the App",
     description:
-      "Get DialiEase from the App Store or Google Play and install it on your mobile device.",
+      "Get DialiEase from the here and install it on your cellphone.",
+    translation:
+      "I-download ang DialiEase mula sa dito at i-install ito sa iyong cellphone.",
   },
   {
     title: "Login with Your Credentials",
     description:
       "Use the login credentials that the CAPD department provided or emailed to you.",
+    translation:
+      "Gamitin ang login credentials na ibinigay o ipinadala sa iyo ng CAPD department.",
   },
   {
     title: "Review Terms & Update Password",
     description:
       "Read and accept the terms and conditions, then change your password for security.",
+    translation:
+      "Basahin at tanggapin ang mga tuntunin at kundisyon, pagkatapos ay palitan ang iyong password para sa seguridad.",
   },
   {
-    title: "Connect Your IoT Device",
+    title: "Connect Your Weighing Device",
     description:
-      "Follow the step-by-step instructions with images to connect your IoT device to the app.",
+      "Follow the step-by-step instructions with images to connect your Weighing device to the app.",
+    translation:
+      "Sundin ang mga hakbang na may kasamang larawan upang ikonekta ang iyong timbangan sa app.",
     hasModal: true,
   },
   {
     title: "Track & Log Sessions",
     description:
       "Easily log each dialysis session, monitor your records, and track fluid balance in real time.",
+    translation:
+      "Madaling i-log ang bawat dialysis session, subaybayan ang iyong mga tala, at makita ang fluid balance sa real time.",
   },
   {
     title: "Receive Reminders & Alerts",
     description:
       "Get automatic notifications for your next dialysis session, supply checks, and hydration tips.",
+    translation:
+      "Tumanggap ng awtomatikong paalala para sa susunod na dialysis session, supply checks, at mga tips sa hydration.",
   },
 ];
 
@@ -48,42 +60,52 @@ const connectionSteps = [
   {
     step: 1,
     title: "Prepare Your Devices",
-    description: "Ensure both your smartphone and IoT device are turned on",
-    image: step0Image, // Direct reference to imported image
+    description:
+      "Ensure both your smartphone and Weighing device are turned on",
+    translation: "Tiyaking naka-on ang iyong smartphone at Timbangan.",
+    image: step0Image,
   },
   {
     step: 2,
     title: "Configure WiFi",
     description:
-      "Once turned on the IoT device will make a portal to configure your wifi. Tap the PD-Treatment-Scale-Config",
-    image: step1Image, // Direct reference to imported image
+      "Once turned on the Weighing device will make a portal to configure your wifi. Tap the PD-Treatment-Scale-Config",
+    translation:
+      "Kapag naka-on, magbubukas ang Timbangan ng portal para sa Wi-Fi configuration. I-tap ang PD-Treatment-Scale-Config.",
+    image: step1Image,
   },
   {
     step: 3,
     title: "WiFi Manager Portal",
     description:
       "After tapping, you will now see the WifiManager Configure portal, tap the 'Configure WiFi Button'",
-    image: step2Image, // Direct reference to imported image
+    translation:
+      "Pagkatapos i-tap, makikita mo ang WifiManager Configure portal. I-tap ang 'Configure WiFi Button'.",
+    image: step2Image,
   },
   {
     step: 4,
     title: "Provide WiFi Credentials",
     description:
-      "You can  now see the available WiFi your IoT device is able to connect to. Tap the WiFi you want the IoT to connect then provide the password",
-    image: step3Image, // Direct reference to imported image
+      "You can  now see the available WiFi your Weighing device is able to connect to. Tap the WiFi you want the Weighing to connect then provide the password",
+    translation:
+      "Makikita mo na ngayon ang mga available na Wi-Fi na maaaring i-connect ang Timbangan. I-tap ang Wi-Fi na gusto mong gamitin at ilagay ang password.",
+    image: step3Image,
   },
   {
     step: 5,
     title: "Saving Credentials",
     description: "Wait, until your WiFi credentials are saved",
+    translation: "Maghintay hanggang sa ma-save ang iyong Wi-Fi credentials.",
     image: step5Image,
-    // Direct reference to imported image
   },
   {
     step: 6,
     title: "WiFi saved",
     description:
       "Now, your device is saved to your selected WiFi. You may now go to your app and check the connection",
+    translation:
+      "Na-save na ngayon ang iyong device sa napiling Wi-Fi. Maaari ka nang pumunta sa iyong app at suriin ang koneksyon.",
     image: step4Image,
   },
 ];
@@ -113,6 +135,13 @@ const Work = () => {
             Follow these simple steps to get started with DialiEase and manage
             your dialysis journey more efficiently.
           </p>
+          <p className="how-description italic" style={{ marginTop: "0.5rem" }}>
+            <em>
+              Sundin ang mga simpleng hakbang na ito upang mas mapadali ang
+              paggamit ng DialiEase at masubaybayan nang maayos ang iyong
+              dialysis journey.
+            </em>
+          </p>
 
           <div className="how-steps">
             {steps.map((step, index) => (
@@ -129,6 +158,12 @@ const Work = () => {
                     Step {index + 1}: {step.title}
                   </h3>
                   <p className="step-text">{step.description}</p>
+                  <p
+                    className="step-text italic"
+                    style={{ marginTop: "0.5rem" }}
+                  >
+                    <em>{step.translation}</em>
+                  </p>
                   {step.hasModal && (
                     <span className="step-click-hint">
                       Click for detailed instructions →
@@ -149,7 +184,10 @@ const Work = () => {
             onClick={(e) => e.stopPropagation()}
           >
             <div className="modal-header">
-              <h2>IoT Device Connection Guide</h2>
+              <h2>Weighing Device Connection Guide</h2>
+              <p style={{ marginTop: "0.25rem" }}>
+                <em>Gabay sa Pagkonekta ng Timbangan</em>
+              </p>
               <button className="close-button" onClick={closeModal}>
                 <IoClose />
               </button>
@@ -157,8 +195,17 @@ const Work = () => {
 
             <div className="modal-content">
               <p className="modal-subtitle">
-                Follow these steps to connect your IoT monitoring device to the
-                DialiEase app
+                Follow these steps to connect your Weighing monitoring device to
+                the DialiEase app
+              </p>
+              <p
+                className="modal-subtitle italic"
+                style={{ marginTop: "0.5rem" }}
+              >
+                <em>
+                  Sundin ang mga hakbang na ito upang ikonekta ang iyong
+                  Weighing monitoring device sa DialiEase app.
+                </em>
               </p>
 
               <div className="connection-steps-grid">
@@ -170,6 +217,12 @@ const Work = () => {
                     </div>
 
                     <p className="step-description">{step.description}</p>
+                    <p
+                      className="step-description italic"
+                      style={{ marginTop: "0.5rem" }}
+                    >
+                      <em>{step.translation}</em>
+                    </p>
 
                     <div className="step-image-container">
                       <img
@@ -216,13 +269,24 @@ const Work = () => {
 
               <div className="troubleshooting-section">
                 <h3>Need Help Connecting?</h3>
+                <p style={{ marginTop: "0.25rem" }}>
+                  <em>Kailangan ng tulong sa pagkonekta?</em>
+                </p>
                 <div className="troubleshooting-tips">
                   <div className="tip">
                     • Restart both devices if connection fails
+                    <br />
+                    <em style={{ marginTop: "0.25rem", display: "block" }}>
+                      • I-restart ang parehong device kung hindi makakonekta
+                    </em>
                   </div>
 
-                  <div className="tip">
+                  <div className="tip" style={{ marginTop: "0.5rem" }}>
                     • Contact CAPD Department: (555) 123-4567
+                    <br />
+                    <em style={{ marginTop: "0.25rem", display: "block" }}>
+                      • Makipag-ugnayan sa CAPD Department: (555) 123-4567
+                    </em>
                   </div>
                 </div>
               </div>
