@@ -22,9 +22,14 @@ const Home = () => {
             app that bridges the gap between daily home treatment and
             professional healthcare support.
           </p>
-          <button className="secondary-button">
-            Download Now <FiArrowDown />{" "}
-          </button>
+          <a
+            href="https://drive.google.com/uc?export=download&id=1q6DpPPOl72IpEFIktwJLpcehWUXBAHte"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="secondary-button"
+          >
+            Download Now <FiArrowDown />
+          </a>
         </div>
         <div className="home-image-section">
           <img src={BannerImage} alt="" />
