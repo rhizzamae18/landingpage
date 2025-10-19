@@ -1264,3 +1264,643 @@ nav.solid {
 .connection-modal::-webkit-scrollbar-thumb:hover {
   background: #a8a8a8;
 }
+/* App Usage Guide Section */
+.usage-guide-section {
+  padding: 4rem 0;
+  color: #395886;
+  scroll-margin-top: 5rem;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+}
+
+.usage-guide-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.usage-guide-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #395886;
+}
+
+.usage-guide-title .highlight {
+  color: #477977;
+}
+
+.usage-guide-description {
+  font-size: 1.125rem;
+  color: #395886;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  line-height: 1.7;
+}
+
+.italic {
+  font-style: italic;
+}
+
+/* Preview Grid */
+.preview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.preview-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #e5e5e5;
+}
+
+.preview-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.preview-image-container {
+  position: relative;
+  aspect-ratio: 9/16;
+  overflow: hidden;
+  background: #f6f6f6;
+}
+
+.preview-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.preview-card:hover .preview-image {
+  transform: scale(1.05);
+}
+
+.preview-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(59, 89, 134, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.preview-card:hover .preview-overlay {
+  opacity: 1;
+}
+
+.preview-step {
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.preview-content {
+  padding: 1rem;
+}
+
+.preview-content h4 {
+  margin: 0;
+  color: #395886;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* View Guide Button */
+.view-guide-button {
+  background: #395886;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 1rem;
+  line-height: 1.4;
+}
+
+.view-guide-button:hover {
+  background: #477977;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Slideshow Modal Styles */
+.slideshow-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+  backdrop-filter: blur(5px);
+}
+
+.slideshow-modal {
+  background: white;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 900px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  animation: modalSlideIn 0.3s ease-out;
+  overflow: hidden; /* Prevent content overflow */
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.slideshow-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid #e2e8f0;
+  background: linear-gradient(135deg, #395886 0%, #477977 100%);
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  flex-shrink: 0; /* Prevent header from shrinking */
+}
+
+.slideshow-title h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.slideshow-title p {
+  margin: 0.25rem 0 0 0;
+  opacity: 0.9;
+  font-size: 0.95rem;
+}
+
+.slideshow-close-button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.25rem;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.slideshow-close-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Slideshow Content - Fixed layout */
+.slideshow-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem;
+  flex: 1;
+  min-height: 0; /* Allow content to shrink properly */
+  position: relative;
+  overflow: hidden; /* Prevent content overflow */
+}
+
+.slide-nav-button {
+  background: #395886;
+  color: white;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.5rem;
+  transition: background 0.3s ease;
+  flex-shrink: 0;
+  margin: 0 0.5rem;
+  z-index: 5;
+}
+
+.slide-nav-button:hover {
+  background: #477977;
+  transform: scale(1.1);
+}
+
+.slide-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  max-width: 500px;
+  margin: 0 1rem;
+  min-height: 0; /* Allow proper flex sizing */
+  overflow: hidden; /* Prevent content overflow */
+}
+
+.slide-image-container {
+  width: 100%;
+  max-width: 300px;
+  aspect-ratio: 9/16;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  margin-bottom: 1.5rem;
+  position: relative;
+  background: #f6f6f6;
+  border: 1px solid #e5e5e5;
+  flex-shrink: 0; /* Prevent image container from shrinking */
+}
+
+.slide-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image-fallback {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #e2e8f0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #4a5568;
+  font-weight: bold;
+  text-align: center;
+  padding: 2rem;
+}
+
+.fallback-content span {
+  display: block;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #395886;
+}
+
+.fallback-content small {
+  font-size: 0.9rem;
+  color: #718096;
+}
+
+.slide-info {
+  text-align: center;
+  max-width: 500px;
+  padding: 0 0.5rem;
+  min-height: 0; /* Allow proper flex sizing */
+  overflow-y: auto; /* Add scroll if content overflows */
+  flex: 1; /* Take available space */
+}
+
+.slide-step {
+  color: #477977;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.slide-title {
+  font-size: 1.5rem;
+  color: #395886;
+  margin: 0 0 1rem 0;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.slide-description {
+  color: #4a5568;
+  line-height: 1.6;
+  font-size: 1rem;
+  margin: 0 0 0.5rem 0;
+}
+
+/* Slide Indicators */
+.slide-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  border-top: 1px solid #e2e8f0;
+  background: #f8fafc;
+  flex-shrink: 0; /* Prevent indicators from shrinking */
+}
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background: #cbd5e0;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.indicator.active {
+  background: #395886;
+  transform: scale(1.2);
+}
+
+.indicator:hover {
+  background: #477977;
+  transform: scale(1.1);
+}
+
+/* Navigation Help - Fixed positioning */
+.navigation-help {
+  text-align: center;
+  padding: 1rem;
+  background: #f7fafc;
+  border-top: 1px solid #e2e8f0;
+  color: #718096;
+  font-size: 0.9rem;
+  flex-shrink: 0; /* Prevent from shrinking */
+  line-height: 1.4;
+}
+
+.navigation-help p {
+  margin: 0.25rem 0;
+}
+
+/* Mobile Responsive - Fixed overlapping issues */
+@media (max-width: 768px) {
+  .usage-guide-section {
+    padding: 2rem 0;
+  }
+
+  .usage-guide-title {
+    font-size: 2rem;
+  }
+
+  .preview-grid {
+    grid-template-columns: 1fr;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .slideshow-modal {
+    margin: 0;
+    border-radius: 0;
+    max-height: 100vh;
+    height: 100vh;
+    max-width: 100%;
+  }
+
+  .slideshow-header {
+    padding: 1.25rem 1.5rem;
+  }
+
+  .slideshow-header h2 {
+    font-size: 1.3rem;
+  }
+
+  .slideshow-content {
+    flex-direction: column;
+    padding: 1rem;
+    justify-content: flex-start;
+    min-height: 0;
+    flex: 1;
+    overflow: hidden;
+  }
+
+  .slide-nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 40px;
+    height: 40px;
+    margin: 0;
+  }
+
+  .prev-button {
+    left: 0.5rem;
+  }
+
+  .next-button {
+    right: 0.5rem;
+  }
+
+  .slide-container {
+    margin: 0;
+    width: 100%;
+    padding: 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+
+  .slide-image-container {
+    max-width: 250px;
+    margin-bottom: 1rem;
+    flex-shrink: 0;
+  }
+
+  .slide-info {
+    padding: 0 0.25rem;
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    max-height: none;
+  }
+
+  .slide-title {
+    font-size: 1.3rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .slide-description {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  /* Ensure proper spacing in mobile */
+  .slideshow-modal {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .slideshow-header {
+    flex-shrink: 0;
+  }
+  
+  .slideshow-content {
+    flex: 1;
+    min-height: 0;
+  }
+  
+  .slide-indicators {
+    flex-shrink: 0;
+  }
+  
+  .navigation-help {
+    flex-shrink: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .usage-guide-container {
+    padding: 0 0.5rem;
+  }
+
+  .usage-guide-title {
+    font-size: 1.75rem;
+  }
+
+  .usage-guide-description {
+    font-size: 1rem;
+  }
+
+  .preview-grid {
+    gap: 1rem;
+  }
+
+  .preview-card {
+    max-width: 280px;
+    margin: 0 auto;
+  }
+
+  .slide-image-container {
+    max-width: 200px;
+  }
+
+  .slide-nav-button {
+    width: 35px;
+    height: 35px;
+    font-size: 1.2rem;
+  }
+
+  .slideshow-header {
+    padding: 1rem 1.25rem;
+  }
+
+  .slideshow-header h2 {
+    font-size: 1.2rem;
+  }
+
+  .slide-title {
+    font-size: 1.2rem;
+  }
+
+  .view-guide-button {
+    padding: 0.875rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  .slide-info {
+    padding: 0 0.25rem;
+  }
+}
+
+/* Scrollbar Styling for Modal */
+.slideshow-modal::-webkit-scrollbar {
+  width: 6px;
+}
+
+.slideshow-modal::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 0 16px 16px 0;
+}
+
+.slideshow-modal::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+.slideshow-modal::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Touch-friendly improvements for mobile */
+@media (hover: none) and (pointer: coarse) {
+  .slide-nav-button {
+    width: 44px;
+    height: 44px;
+  }
+  
+  .indicator {
+    width: 14px;
+    height: 14px;
+  }
+  
+  .preview-card:hover {
+    transform: none;
+  }
+  
+  .view-guide-button:hover {
+    transform: none;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .preview-card,
+  .slide-nav-button,
+  .indicator,
+  .view-guide-button {
+    transition: none;
+  }
+  
+  .slideshow-modal {
+    animation: none;
+  }
+  
+  .preview-image {
+    transition: none;
+  }
+}
+
+/* Fix for content overflow in slide info */
+.slide-info::-webkit-scrollbar {
+  width: 4px;
+}
+
+.slide-info::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 2px;
+}
+
+.slide-info::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 2px;
+}
