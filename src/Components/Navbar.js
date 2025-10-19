@@ -16,6 +16,8 @@ import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import GroupsIcon from "@mui/icons-material/Groups";
 import ContactsIcon from "@mui/icons-material/Contacts";
 import Diversity3Icon from "@mui/icons-material/Diversity3";
+import PhoneIcon from "@mui/icons-material/Phone";
+import { FiSmartphone } from "react-icons/fi";
 
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
@@ -29,11 +31,12 @@ const Navbar = () => {
       icon: <HelpOutlineIcon />,
       href: "#how-it-works",
     },
-    // {
-    //   text: "How It Works",
-    //   icon: <HelpOutlineIcon />,
-    //   href: "#iot-connection-guide",
-    // },
+    {
+      text: "App Usage Guide",
+      icon: <FiSmartphone />,
+      href: "#app-usage-guide",
+    },
+
     { text: "About Us", icon: <ContactsIcon />, href: "#about" },
     { text: "Our Team", icon: <GroupsIcon />, href: "#team" },
     { text: "Contact Us", icon: <Diversity3Icon />, href: "#contact" },
