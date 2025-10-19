@@ -1,5 +1,6 @@
 import "./App.css";
 import About from "./Components/About";
+import AppUsageGuide from "./Components/AppUsageGuide";
 import ContactUs from "./Components/ContactUs";
 import Features from "./Components/Features";
 import Home from "./Components/Home";
@@ -15,10 +16,12 @@ function App() {
       <Home />
       <Features />
       <Work />
+      <AppUsageGuide />
       {/* <IoTConnectionGuide /> */}
       <About />
       <OurTeam />
       <ContactUs />
+      
     </div>
   );
 }
